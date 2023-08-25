@@ -34,11 +34,11 @@ const Regist: React.FC = () => {
         message.success(defaultLoginSuccessMessage);
         /** 此方法会跳转到 redirect 参数所在的位置 */
         if (!history) return;
-        const { query } = history.location;
-        const { redirect } = query as {
-          redirect: string;
-        };
-        history.push('/user/login?redirect'+redirect );
+        const { query} = history.location;
+        history.push({
+            pathname:'/user/login',
+            query,
+        });
         return;
       }else {
         throw new Error(`register error id = ${id}`);
