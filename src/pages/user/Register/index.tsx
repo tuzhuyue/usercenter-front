@@ -128,6 +128,25 @@ const Regist: React.FC = () => {
                   },
                 ]}
               />
+              <ProFormText
+                name="planetCode"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <UserOutlined className={styles.prefixIcon} />,
+                }}
+                placeholder={'请输入星球码'}
+                rules={[
+                  {
+                    required: true,
+                    message: '星球码是必填项！',
+                  },
+                  {
+                    min:5,
+                    type:"string",
+                    message:"长度不得小于5",
+                  },
+                ]}
+              />
             </>
           )}
 
